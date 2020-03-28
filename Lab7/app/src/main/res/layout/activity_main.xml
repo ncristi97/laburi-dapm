@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/Listen"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/rosu"
+        android:text="LISTEN IT!"
+        android:textColor="@color/albastru"
+        android:textSize="30dp"
+        android:textStyle="bold"></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textScris"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text=" "></TextView>
+
+    <Button
+        android:id="@+id/Open"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:text="Tap to Open Mic"
+        android:background="@color/albastru"
+        android:textColor="@color/rosu"
+        android:textSize="30dp"
+        android:textStyle="italic"></Button>
+
+</RelativeLayout>
