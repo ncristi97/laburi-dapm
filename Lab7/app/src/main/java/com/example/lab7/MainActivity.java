@@ -1,7 +1,9 @@
 package com.example.lab7;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button bTtS;
     TextToSpeech t1;
     TextView scrie;
+    Fragment fr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
     // Create an intent that can start the Speech Recognizer activity
     private void displaySpeechRecognizer() {
+        fr = new FragmentTwo();
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_place, fr);
+        fragmentTransaction.commit();
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -74,8 +82,13 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
     protected void vorbeste(){
+        fr = new FragmentOne();
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_place, fr);
+        fragmentTransaction.commit();
         String toSpeak;
-        if(scrie.getText()!=" "){
+        if(scrie.getText()!= " "){
             toSpeak=scrie.getText().toString();
         }
         else
@@ -83,7 +96,5 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
         t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
     }
-
-
 
 }

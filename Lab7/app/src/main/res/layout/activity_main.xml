@@ -15,7 +15,15 @@
         android:text="LISTEN IT!"
         android:textColor="@color/albastru"
         android:textSize="30dp"
-        android:textStyle="bold"></Button>
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"></Button>
+
+    <fragment
+        android:id="@+id/fragment_place"
+        android:name="com.example.lab7.FragmentOne"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@+id/Listen"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +31,7 @@
         android:id="@+id/textScris"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text=" "></TextView>
+        android:text = " "></TextView>
 
     <Button
         android:id="@+id/Open"
